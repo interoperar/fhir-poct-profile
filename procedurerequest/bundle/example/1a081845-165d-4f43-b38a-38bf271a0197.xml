@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="1a081845-165d-4f43-b38a-38bf271a0197"/>
+    <meta>
+        <versionId value="1"/>
+    </meta>
+    <type value="message"/>
+    <entry id="messageheader">
+        <resource>
+            <MessageHeader>
+                <event>
+                    <system value="http://hl7.org/fhir/message-events"/>
+                    <code value="admin-notify"/>
+                    <display value="admin-notify"/>
+                </event>
+                <destination>
+                    <name value="Alere POCT Station"/>
+                    <endpoint value="http://127.0.0.1:9001/poct"/>
+                </destination>
+                <timestamp value="2018-01-01T17:00:23"/>
+                <source>
+                    <name value="AVICENA"/>
+                    <endpoint value="http://127.0.0.1:9000"/>
+                </source>
+                <focus id="1">
+                    <reference value="#343118fb-682d-4840-8dab-65c5eed12638"/>
+                </focus>
+            </MessageHeader>
+        </resource>
+    </entry>
+    <entry id="messageheader.focus.1">
+        <resource>
+            <ProcedureRequest>
+                <id value="343118fb-682d-4840-8dab-65c5eed12638"/>
+                <identifier>
+                    <value value="54269347602"/>
+                </identifier>
+                <requisition>
+                    <value value="542693476"/>
+                </requisition>
+                <status value="active"/>
+                <intent value="order"/>
+                <priority value="routine"/>
+                <category>
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="405262001"/>
+                        <display value="POCT - Point of care testing"/>
+                    </coding>
+                </category>
+                <code>
+                    <coding id="cups">
+                        <system value="https://github.com/interoperar/fhir-poct-profile/terminologies/poct-services-co"/>
+                        <code value="903426"/>
+                        <display value="HEMOGLOBINA GLICOSILADA AUTOMATIZADA"/>
+                    </coding>
+                    <coding id="lis">
+                        <system value="https://github.com/interoperar/fhir-poct-profile/terminologies/poct-services-co"/>
+                        <code value="POCT903426"/>
+                        <display value="HEMOGLOBINA GLICOSILADA POCT"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="#2b665d05-e7c5-455c-bf97-fcea5d81497c"/>
+                </subject>
+                <authoredOn value="2018-01-01T17:00:23"/>
+                <requester>
+                    <agent>
+                        <reference value="#34168b25-045a-45ad-8f16-700a13fda583"/>
+                    </agent>
+                </requester>
+                <supportingInfo id="requesterlocation">
+                    <reference value="#3662348a-230c-4dca-bbf2-d78792225c18"/>
+                </supportingInfo>
+                <note>
+                    <text value="Se solicita pruebas diagnósticas rápidas"/>
+                </note>
+            </ProcedureRequest>
+        </resource>
+    </entry>
+    <entry id="procedurerequest.subject.1">
+        <resource>
+            <Patient>
+                <id value="2b665d05-e7c5-455c-bf97-fcea5d81497c"/>
+                <identifier id="personal">
+                    <use value="official"/>
+                    <type>
+                        <coding>
+                            <system value="https://github.com/interoperar/fhir-local-terminologies/identifiers/personal-identifier-type-co"/>
+                            <code value="CC"/>
+                            <display value="Cédula de Ciudadanía"/>
+                        </coding>
+                    </type>
+                    <value value="987654321"/>
+                </identifier>
+                <identifier id="clinical">
+                    <use value="usual"/>
+                    <value value="987654321"/>
+                </identifier>
+                <active value="true"/>
+                <name>
+                    <family id="family-name" value="Moreno Reyes"/>
+                    <given id="given-name-1" value="Mario"/>
+                    <given id="given-name-2" value="Alfonso"/>
+                </name>
+                <gender value="male"/>
+                <birthDate value="1963-08-16"/>
+                <managingOrganization>
+                    <reference value="#e04d13fe-1ce5-4da3-adba-21da70fceab7"/>
+                </managingOrganization>
+            </Patient>
+        </resource>
+    </entry>
+    <entry id="procedurerequest.practitioner.1">
+        <resource>
+            <Practitioner>
+                <id value="34168b25-045a-45ad-8f16-700a13fda583"/>
+                <identifier id="personal">
+                    <use value="official"/>
+                    <type>
+                        <coding>
+                            <system value="https://github.com/interoperar/fhir-local-terminologies/identifiers/personal-identifier-type-co"/>
+                            <code value="CC"/>
+                            <display value="Cédula de Ciudadanía"/>
+                        </coding>
+                    </type>
+                    <value value="654123987"/>
+                </identifier>
+                <active value="true"/>
+                <name>
+                    <text value="Gregorio Casas"/>
+                </name>
+            </Practitioner>
+        </resource>
+    </entry>
+    <entry id="patient.managingorganization.1">
+        <resource>
+            <Organization>
+                <id value="e04d13fe-1ce5-4da3-adba-21da70fceab7"/>
+                <identifier>
+                    <use value="official"/>
+                    <value value="EPS005"/>
+                </identifier>
+                <active value="true"/>
+                <type>
+                    <coding>
+                        <system value="http://hl7.org/fhir/organization-type"/>
+                        <code value="ins"/>
+                        <display value="Insurance Company"/>
+                    </coding>
+                </type>
+                <name value="EPS SANITAS SA"/>
+            </Organization>
+        </resource>
+    </entry>
+    <entry id="patient.coverage.1">
+        <resource>
+            <Coverage>
+                <id value="coverage-example-1"/>
+                <extension id="copayment-ind" url="https://github.com/interoperar/fhir-local-extensibility/copayment-ind">
+                    <valueBoolean value="false"/>
+                </extension>
+                <identifier>
+                    <value value="987654321"/>
+                </identifier>
+                <status value="active"/>
+                <type>
+                    <coding>
+                        <system value="https://github.com/interoperar/fhir-local-terminologies/code-systems/coverage-type-co"/>
+                        <code value="POS"/>
+                        <display value="Paquete Obligatorio de Servicios"/>
+                    </coding>
+                </type>
+                <beneficiary>
+                    <reference value="#2b665d05-e7c5-455c-bf97-fcea5d81497c"/>
+                </beneficiary>
+                <payor>
+                    <reference value="#e04d13fe-1ce5-4da3-adba-21da70fceab7"/>
+                </payor>
+            </Coverage>
+        </resource>
+    </entry>
+    <entry id="procedurerequest.requesterlocation.1">
+        <resource>
+            <Location>
+                <id value="3662348a-230c-4dca-bbf2-d78792225c18"/>
+                <identifier>
+                    <use value="usual"/>
+                    <value value="1100110000"/>
+                </identifier>
+                <name value="Hospital Jorge H Uribe IPS"/>
+            </Location>
+        </resource>
+    </entry>
+</Bundle>

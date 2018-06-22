@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcedureRequest xmlns="http://hl7.org/fhir">
+    <id value="procedurerequest-example-1"/>
+    <identifier>
+        <value value="54269347602"/>
+    </identifier>
+    <requisition>
+        <value value="542693476"/>
+    </requisition>
+    <status value="active"/>
+    <intent value="order"/>
+    <priority value="routine"/>
+    <category>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="405262001"/>
+            <display value="POCT - Point of care testing"/>
+        </coding>
+    </category>
+    <code>
+        <coding id="cups">
+            <system value="https://github.com/interoperar/fhir-poct-profile/terminologies/poct-services-co"/>
+            <code value="903426"/>
+            <display value="HEMOGLOBINA GLICOSILADA AUTOMATIZADA"/>
+        </coding>
+        <coding id="lis">
+            <system value="https://github.com/interoperar/fhir-poct-profile/terminologies/poct-services-co"/>
+            <code value="POCT903426"/>
+            <display value="HEMOGLOBINA GLICOSILADA POCT"/>
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/patient-example-1"/>
+    </subject>
+    <authoredOn value="2018-01-01T17:00:23"/>
+    <requester>
+        <agent>
+            <reference value="Practitioner/practitioner-example-1"/>
+        </agent>
+    </requester>
+    <supportingInfo id="requesterlocation">
+        <reference value="Location/location-example-1"/>
+    </supportingInfo>
+    <note>
+        <text value="Se solicita pruebas diagnósticas rápidas"/>
+    </note>
+</ProcedureRequest>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageHeader xmlns="http://hl7.org/fhir">
+    <event>
+        <system value="http://hl7.org/fhir/message-events"/>
+        <code value="admin-notify"/>
+        <display value="admin-notify"/>
+    </event>
+    <destination>
+        <name value="Alere POCT Station"/>
+        <endpoint value="http://127.0.0.1:9001/poct"/>
+    </destination>
+    <timestamp value="2018-01-01T17:00:23"/>
+    <source>
+        <name value="AVICENA"/>
+        <endpoint value="http://127.0.0.1:9000"/>
+    </source>
+    <focus id="1">
+        <reference value="ProcedureRequest/procedurerequest-example-1"/>
+    </focus>
+</MessageHeader>
